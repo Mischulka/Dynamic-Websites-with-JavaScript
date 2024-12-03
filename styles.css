@@ -1,0 +1,575 @@
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Root variables for easy customization */
+:root {
+  --font-color: #333;
+  --header-bg: #01003b;
+  --menu-icon-color: #fff;
+  --menu-hover-color: #122d88;
+  --dark-bg: #000000;
+  --dark-font-color: #fff;
+  --footer-bg: #01003b;
+  --content-color: #ddd;
+  --form-light-bg: #f5f5f5;
+  --form-dark-bg: #030968;
+  --white: #ffffff;
+  --light-blue: #00bfff;
+  --grid-item-bg-1: rgba(30, 144, 255, 0.3);
+  --grid-item-bg-2: rgba(30, 144, 255, 0.4);
+  --dark-blue-1: rgba(1, 0, 59, 0.5);
+  --dark-blue-2: rgba(1, 0, 59, 0.6);
+  --dark-blue-3: rgba(1, 0, 59, 0.7);
+  --dark-blue-4: rgba(1, 0, 59, 0.8);
+  --html-overlay: rgba(255, 0, 0, 0.4);
+  --js-overlay: rgba(255, 255, 0, 0.4);
+  --active-link-bg-1: #020053;
+  --active-link-bg-2: #02004a;
+  --run-code-bg: #4caf50;
+  --run-code-hover-bg: #45a049;
+  --submit-bg: #15304c;
+  --submit-hover-bg: #0f2440;
+  --input-border: #ccc;
+}
+
+/* Default (Light) Mode */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--white);
+  color: var(--font-color);
+  flex: 1;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-font-color);
+}
+
+body.dark-mode form {
+  background-color: var(--form-dark-bg);
+}
+
+/* Header styles */
+header {
+  background-color: var(--header-bg);
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.logo img {
+  width: 70px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  padding-left: 5px;
+}
+
+nav li {
+  margin: 0 40px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--menu-icon-color);
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--menu-hover-color);
+}
+
+.menu-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+  color: var(--menu-icon-color);
+}
+
+.menu-icon-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--menu-icon-color);
+  cursor: pointer;
+}
+
+.menu-icon-button i {
+  font-size: 24px;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  color: var(--menu-icon-color);
+  font-size: 24px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+/* Content section */
+.content-section {
+  display: none;
+  padding: 20px;
+  background-color: #010031;
+  color: var(--content-color);
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.content-section.active {
+  display: block;
+}
+
+.content-section.active p a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--active-link-bg-1);
+  color: var(--text-light);
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.content-section.active p a:hover {
+  background-color: var(--active-link-bg-2);
+}
+
+/* Styl pro jednotlivé položky kurzu */
+.content-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.content-section li {
+  background-color: var(--dark-blue-3);
+  color: var(--white);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  flex: 1 1 calc(33.333% - 20px);
+  text-align: left;
+}
+
+.content-section li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Styl pro nadpisy v položkách */
+.content-section strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 20px;
+  color: var(--white);
+}
+
+/* Styl pro text v položkách */
+.content-section p {
+  margin: 5px 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--white);
+}
+
+/* Styl pro položky Úroveň a Délka */
+.content-section .course-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.content-section .course-details div {
+  flex: 1;
+}
+
+.content-section .course-details span {
+  font-weight: bold;
+  color: var(--white);
+}
+
+.content-section .course-details p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--white);
+}
+
+/* Styl pro odkazy */
+.content-section a {
+  color: var(--light-blue);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.content-section a:hover {
+  text-decoration: underline;
+}
+
+/* Grid layout pro content-section */
+.grid-layout ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Styl pro jednotlivé položky v mřížce */
+.grid-layout li {
+  background-color: var(--grid-item-bg-1);
+  color: var(--white);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.grid-layout li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+.grid-layout h3 {
+  margin-bottom: 10px;
+  font-size: 24px;
+  color: var(--white);
+}
+
+.grid-layout p {
+  margin-bottom: 8px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--white);
+  flex-grow: 1;
+}
+
+.grid-layout a {
+  align-self: center;
+  margin-top: auto;
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: var(--dark-blue-1);
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.grid-layout a:hover {
+  text-decoration: none;
+  background-color: var(--dark-blue-4);
+}
+
+/* Gallery styles */
+.training-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.image-container {
+  flex: 1 1 calc(33.333% - 10px);
+  max-width: calc(33.333% - 10px);
+  aspect-ratio: 16 / 9;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.image-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Overlay styles */
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--white);
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 24px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+/* Specifické barvy pro jednotlivé nadpisy */
+.image-container[data-technology="HTML"] .overlay {
+  background-color: var(--html-overlay);
+}
+
+.image-container[data-technology="CSS"] .overlay {
+  background-color: var(--dark-blue-2);
+}
+
+.image-container[data-technology="JavaScript"] .overlay {
+  background-color: var(--js-overlay);
+}
+
+/* Form styles */
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #010031;
+  color: var(--content-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.54);
+  transition: background-color 0.3s ease;
+}
+
+/* Styl pro nadpis formuláře */
+#form-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 34px;
+  font-weight: bold;
+  color: #030968;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* Styl pro nová pole ve formuláři */
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+}
+
+form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: var(--submit-bg);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+  background-color: var(--submit-hover-bg);
+}
+
+#form-message {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#forgot-password {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#forgot-password a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#forgot-password a:hover {
+  text-decoration: underline;
+}
+
+#form-message {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* Scroll to top button */
+#scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #333;
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 1000;
+}
+
+#scroll-top.show {
+  opacity: 1;
+}
+
+/* Footer styles */
+footer {
+  background-color: var(--footer-bg);
+  padding: 5px;
+  font-size: 10px;
+  text-align: center;
+  color: var(--white);
+  margin-top: auto;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+}
+
+/* Editor styles */
+.editor {
+  display: none;
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 800px;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  background-color: var(--form-light-bg);
+}
+
+.editor.active {
+  display: block;
+}
+
+.editor textarea {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  font-family: monospace;
+  padding: 5px;
+}
+
+.editor .run-code {
+  padding: 10px 20px;
+  background-color: var(--run-code-bg);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editor .run-code:hover {
+  background-color: var(--run-code-hover-bg);
+}
+
+.output-frame {
+  width: 100%;
+  height: 300px;
+  border: 1px solid var(--input-border);
+  margin-top: 10px;
+}
+
+/* Sjednocení formuláře */
+#section2 {
+  background-color: var(--form-dark-bg);
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.54);
+}
+
+#section2 h2 {
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 20px;
+}
+#section2 form {
+  background: none;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+#section2 label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--white);
+  font-weight: bold;
+}
+#section2 input[type="text"],
+#section2 input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--white);
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+#section2 button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #010031;
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#section2 button[type="submit"]:hover {
+  background-color: var(--submit-hover-bg);
+}

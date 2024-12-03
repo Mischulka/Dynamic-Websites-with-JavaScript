@@ -1,0 +1,105 @@
+@media (min-width: 769px) {
+  #menu-toggle {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header {
+    height: auto;
+    padding: 10px;
+  }
+
+  .menu-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  #theme-toggle {
+    margin-left: 20px;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: var(--header-bg);
+    position: absolute;
+    top: 75px;
+    left: 0;
+    padding: 10px 0;
+    z-index: 10;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav li {
+    margin: 8px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav a {
+    display: block;
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .content-section {
+    margin-top: 20px;
+    padding: 15px;
+  }
+
+  .content-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .content-section p {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .grid-layout ul {
+    grid-template-columns: 1fr;
+  }
+
+  .image-container {
+    flex: 1 1 100%;
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .training-section {
+    gap: 5px;
+  }
+
+  /* Responsivní Overlay Styl */
+  .overlay {
+    font-size: 18px;
+    padding: 15px;
+  }
+
+  footer {
+    font-size: 8px;
+  }
+}

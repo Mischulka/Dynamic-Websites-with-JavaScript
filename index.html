@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="query-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Projekt č. 3 – JavaScript</title>
+  </head>
+  <body>
+    <!-- -------------------HEADER SECTION------------------- -->
+    <header>
+      <div class="logo">
+        <img src="./images/logo.webp" alt="logo" />
+      </div>
+      <div class="menu-container">
+        <nav>
+          <ul>
+            <li>
+              <a href="#about" data-target="about" aria-label="Domů">Domů</a>
+            </li>
+            <li>
+              <a href="#advantages" data-target="advantages" aria-label="Kurzy"
+                >Kurzy</a
+              >
+            </li>
+            <li>
+              <a
+                href="#projects"
+                data-target="projects"
+                aria-label="Procvičování"
+                >Procvičování</a
+              >
+            </li>
+            <li>
+              <a href="#tips" data-target="tips" aria-label="Nástroje"
+                >Nástroje</a
+              >
+            </li>
+            <li>
+              <a href="#contact" data-target="contact" aria-label="Kontakt"
+                >Kontakt</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <div class="menu-icon">
+          <button id="theme-toggle" aria-label="Přepnout režim">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <button id="menu-toggle" class="menu-icon-button" aria-label="Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- -------------------TEXT BLOCKS IN HEADER------------------- -->
+    <main>
+      <!-- -------------------ABOUT ------------------- -->
+      <div id="about" class="content-section">
+        <h2>Domů</h2>
+        <p>
+          Vítejte na naší tréninkové platformě pro programování! Naše aplikace
+          vám nabízí interaktivní kurzy a praktická cvičení zaměřená na HTML,
+          CSS a JavaScript. Začněte s námi zlepšovat své programovací dovednosti
+          ještě dnes.
+        </p>
+      </div>
+
+      <!-- -------------------ADVANTAGES ------------------- -->
+      <div id="advantages" class="content-section grid-layout">
+        <h2>Kurzy</h2>
+        <ul>
+          <li>
+            <strong>Kurz 1 - Základy HTML</strong>
+            <p>
+              Naučte se základní strukturu HTML dokumentu, značky, atributy a
+              sémantické prvky. Ideální pro začátečníky.
+            </p>
+            <p>Úroveň: Začátečník</p>
+            <p>Délka: 5 hodin</p>
+            <a
+              href="https://www.primakurzy.cz/kurz-tvorba-webovych-stranek"
+              target="_blank"
+              class="start-course-link"
+              >Začněte kurz</a
+            >
+          </li>
+          <li>
+            <strong>Kurz 2 - Stylování s CSS</strong>
+            <p>
+              Prozkoumejte stylování webových stránek pomocí CSS, včetně
+              layoutů, typografie a responsivního designu. Ideální pro
+              začátečníky.
+            </p>
+            <p>Úroveň: Začátečník</p>
+            <p>Délka: 56 hodin</p>
+            <a
+              href="https://www.kurzy-programovani.cz/kurz-stylovani-webu-v-css/"
+              target="_blank"
+              class="start-course-link"
+              >Začněte kurz</a
+            >
+          </li>
+          <li>
+            <strong>Kurz 3 - Interaktivní Javascript</strong>
+            <p>
+              Naučte se, jak přidat interaktivitu na vaše webové stránky pomocí
+              Javascriptu, včetně událostí, funkcí a DOM manipulace. Ideální pro
+              začátečníky.
+            </p>
+            <p>Úroveň: Začátečník</p>
+            <p>Délka: 6 hodin</p>
+            <a
+              href="https://www.primakurzyonline.cz/kurz-javascript"
+              target="_blank"
+              class="start-course-link"
+              >Začněte kurz</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- -------------------PROJECTS ------------------- -->
+      <div id="projects" class="content-section grid-layout">
+        <h2>Procvičování</h2>
+        <ul>
+          <li>
+            <strong>Cvičení 1 - HTML šablona</strong>
+            <p>
+              Vytvořte základní HTML šablonu pro jednoduchou webovou stránku.
+            </p>
+            <p>Úroveň: Začátečník</p>
+            <p>Hodnocení: Automatické testování struktury HTML.</p>
+            <a
+              href="https://codepen.io/pen/?editors=1000"
+              target="_blank"
+              class="start-exercise"
+              >Začněte cvičení</a
+            >
+          </li>
+          <li>
+            <strong>Cvičení 2 - Stylování s CSS</strong>
+            <p>
+              Aplikujte různé styly na HTML šablonu, včetně barvy, fontů a
+              layoutu.
+            </p>
+            <p>Úroveň: Začátečník</p>
+            <p>Hodnocení: Automatické testování stylů.</p>
+            <a
+              href="https://codepen.io/pen/?editors=0100"
+              target="_blank"
+              class="start-exercise"
+              >Začněte cvičení</a
+            >
+          </li>
+          <li>
+            <strong>Cvičení 3 - Javascript funkce</strong>
+            <p>
+              Implementujte funkce pro interaktivní prvky na webové stránce.
+            </p>
+            <p>Úroveň: Začátečník</p>
+            <p>Hodnocení: Automatické testování funkcionality Javascriptu.</p>
+            <a
+              href="https://codepen.io/pen/?editors=0010"
+              target="_blank"
+              class="start-exercise"
+              >Začněte cvičení</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- -------------------TIPS ------------------- -->
+      <div id="tips" class="content-section grid-layout">
+        <h2>Nástroje</h2>
+        <ul>
+          <li>
+            <strong>Nástroj 1 - Online editor kódu</strong>
+            <p>
+              Přístup k nástroji pro kódování online, například CodePen nebo
+              JSFiddle, který umožňuje interaktivní psaní a testování kódu.
+            </p>
+            <a href="https://codepen.io/pen/" target="_blank"
+              >Vyzkoušejte nyní</a
+            >
+          </li>
+          <li>
+            <strong>Nástroj 2 - Debugger</strong>
+            <p>
+              Doporučení pro debugger nástroj jako Chrome DevTools, který pomáhá
+              při ladění kódu.
+            </p>
+            <a
+              href="https://fordevs.cz/clanky/developer-console"
+              target="_blank"
+              >Zjistit více</a
+            >
+          </li>
+          <li>
+            <strong>Nástroj 3 - API Dokumentace</strong>
+            <p>Odkazy na užitečnou API dokumentaci W3Schools.</p>
+            <a href="https://www.w3schools.com/" target="_blank"
+              >Prozkoumat dokumentaci</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <!-- -------------------CONTACT ------------------- -->
+      <div id="contact" class="content-section">
+        <h2>Kontakt</h2>
+        <p>Pokud máte otázky nebo návrhy, neváhejte mě kontaktovat...</p>
+        <p><a href="mailto:michaela.lattenberg@gmail.com">Odeslat e-mail</a></p>
+      </div>
+    </main>
+
+    <!-- -------------------TRAINING SECTION------------------- -->
+    <section class="training-section">
+      <!-- HTML picture -->
+      <div class="image-container" data-technology="HTML">
+        <a
+          href="https://www.rascasone.com/cs/blog/html-pro-zacatecniky-jak-psat-web"
+          target="_blank"
+        >
+          <img src="./images/html.jpg" alt="HTML" />
+          <div class="overlay">HTML</div>
+        </a>
+      </div>
+
+      <!-- CSS picture -->
+      <div class="image-container" data-technology="CSS">
+        <a
+          href="https://www.rascasone.com/cs/blog/kaskadove-styly-css-jak-zacit"
+          target="_blank"
+        >
+          <img src="./images/img3.jpg" alt="CSS" />
+          <div class="overlay">CSS</div>
+        </a>
+      </div>
+
+      <!-- JavaScript picture -->
+      <div class="image-container" data-technology="JavaScript">
+        <a
+          href="https://www.rascasone.com/cs/blog/co-je-javascript-pro-zacatecniky"
+          target="_blank"
+          ><img src="./images/img1.webp" alt="JavaScript" />
+          <div class="overlay">JAVASCRIPT</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- -------------FORM SECTION------------- -->
+    <section id="section2">
+      <h2 id="form-title">Přidej se k nám</h2>
+      <form id="form-section">
+        <label for="username">Přihlašovací jméno:</label>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          required
+          placeholder="Zadejte přihlašovací jméno"
+        />
+        <label for="password1">Heslo:</label>
+        <input type="password" id="password1" required />
+        <label for="password2">Potvrdit heslo:</label>
+        <input type="password" id="password2" required />
+        <button type="submit" aria-label="Odeslat formulář">Odeslat</button>
+        <div id="form-message"></div>
+        <div id="forgot-password">
+          <a href="/reset-password" target="_blank">Zapomenuté heslo?</a>
+        </div>
+      </form>
+    </section>
+
+    <!-- -------------------FOOTER SECTION------------------- -->
+    <footer id="footer">
+      <p>
+        © 2024 Tréninková aplikace pro programování. Created by Michaela
+        Lattenberg.
+      </p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" aria-label="Zpět nahoru">
+      <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
